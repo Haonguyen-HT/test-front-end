@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+  background: #8f4891;
+  background: linear-gradient(135deg, #8f4891, #cf652e);
+}
+
+.nav-top-item {
+  @apply px-[32px] text-duskyTeal text-[14px] font-bold hover:cursor-pointer;
+}
+
+.input {
+  width: calc(100% - 144px);
+}
