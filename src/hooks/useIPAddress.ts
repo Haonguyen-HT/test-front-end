@@ -8,7 +8,7 @@ export interface IPAddressData {
 
 const fetchIPAddressData = async (): Promise<IPAddressData> => {
   try {
-    const response = await fetch('http://ip-api.com/json/');
+    const response = await fetch('https://freeipapi.com/api/json/');
     if (!response.ok) {
       throw new Error('Failed to fetch IP address data');
     }

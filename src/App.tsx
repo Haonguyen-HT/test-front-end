@@ -19,10 +19,9 @@ function App() {
 
   const navigate = useNavigate();
 
-  window?.aptos?.onDisconnect(() => {
+  window.aptos.onDisconnect(() => {
     setAccount(initialStateAccount);
   });
-
   useEffect(() => {
     if (data && isIPAddressFromJapan(data!)) {
       navigate('/access-denied');
@@ -36,7 +35,8 @@ function App() {
         setAccount(account);
       })();
     }
-  }, [dataConnect, setAccount]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataConnect]);
 
   return isLoading || isLoadingConnect ? (
     <Loader />
@@ -51,11 +51,9 @@ function App() {
                 key={index}
                 path={path}
                 element={
-                  <>
-                    <Suspense fallback={<Loader />}>
-                      <Component />
-                    </Suspense>
-                  </>
+                  <Suspense fallback={<Loader />}>
+                    <Component />
+                  </Suspense>
                 }
               />
             );
