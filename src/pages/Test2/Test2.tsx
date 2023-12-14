@@ -13,7 +13,8 @@ export const Test2 = () => {
   const [account] = useLocalStorage(ACCOUNT_STORAGE_KEY, initialStateAccount);
 
   if (!account?.address) {
-    return navigate('/');
+    navigate('/');
+    return;
   }
 
   return (

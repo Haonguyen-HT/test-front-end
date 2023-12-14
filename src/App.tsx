@@ -51,9 +51,11 @@ function App() {
                 key={index}
                 path={path}
                 element={
-                  <Suspense fallback={<Loader />}>
-                    <Component />
-                  </Suspense>
+                  <>
+                    <Suspense fallback={<Loader />}>
+                      <Component />
+                    </Suspense>
+                  </>
                 }
               />
             );
