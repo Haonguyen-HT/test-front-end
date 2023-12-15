@@ -19,9 +19,10 @@ function App() {
 
   const navigate = useNavigate();
 
-  window.aptos.onDisconnect(() => {
+  window?.aptos?.onDisconnect(() => {
     setAccount(initialStateAccount);
   });
+
   useEffect(() => {
     if (data && isIPAddressFromJapan(data!)) {
       navigate('/access-denied');
